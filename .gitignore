@@ -1,0 +1,8 @@
+# Ignore Webstorm Folder
+.idea
+
+# Ignore node_modules
+node_modules
+
+# Ignore macOS DS_Store folder
+.DS_Store

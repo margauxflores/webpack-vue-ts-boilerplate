@@ -1,0 +1,8 @@
+# Ignored so I can use the require syntax in Webpack configuration files
+webpack.*.config.js
+
+# Ignored so I can use the require syntax in the ESLint configuration file
+.eslintrc.js
+
+# Ignored so I can use the require syntax in PostCSS configuration file
+postcss.config.js
