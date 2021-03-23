@@ -8,50 +8,51 @@ module.exports = {
   entry: './src/app.ts',
   output: {
     filename: 'app.js',
-    path: path.resolve(__dirname, 'dist')
+    path: path.resolve(__dirname, 'dist'),
+    publicPath: '/',
   },
   resolve: {
     alias: {
       vue$: 'vue/dist/vue.esm.js',
-      '@': path.resolve(__dirname, 'src')
+      '@': path.resolve(__dirname, 'src'),
     },
-    extensions: ['.ts', '.js', '.vue', '.scss']
+    extensions: ['.ts', '.js', '.vue', '.scss'],
   },
   module: {
     rules: [
       {
         test: /\.vue$/,
-        loader: 'vue-loader'
+        loader: 'vue-loader',
       },
       {
         test: /\.(js|ts)x?$/,
         loader: 'babel-loader',
-        exclude: /node_modules/
+        exclude: /node_modules/,
       },
       {
         test: /\.(png|jpg|gif|svg)$/,
         loader: 'file-loader',
         options: {
-          name: '[name].[ext]?[hash]'
-        }
-      }
-    ]
+          name: '[name].[ext]?[hash]',
+        },
+      },
+    ],
   },
   performance: {
-    hints: false
+    hints: false,
   },
   plugins: [
     new VueLoaderPlugin(),
     new HtmlWebpackPlugin({
       title: 'Project Title',
-      template: './src/index.html'
+      template: './src/index.html',
     }),
     new ESLintPlugin({
       extensions: ['ts', 'vue'],
-      failOnWarning: true
+      failOnWarning: true,
     }),
     new webpack.DefinePlugin({
-      'process.env.BASE_URL': JSON.stringify(process.env.BASE_URL)
-    })
-  ]
+      'process.env.BASE_URL': JSON.stringify(process.env.BASE_URL),
+    }),
+  ],
 };

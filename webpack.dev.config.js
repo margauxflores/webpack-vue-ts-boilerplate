@@ -12,14 +12,14 @@ const devConfig = {
           {
             loader: 'css-loader',
             options: {
-              modules: true
-            }
+              modules: true,
+            },
           },
           'postcss-loader',
-          'sass-loader'
+          'sass-loader',
         ],
       },
-    ]
+    ],
   },
   devtool: 'source-map',
   devServer: {
@@ -27,8 +27,8 @@ const devConfig = {
     port: 9999,
     overlay: true,
     open: true,
-    historyApiFallback: true
-  }
+    historyApiFallback: true,
+  },
 };
 
 module.exports = merge(commonConfig, devConfig);

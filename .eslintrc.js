@@ -3,7 +3,7 @@ module.exports = {
   env: {
     browser: true,
     node: true,
-    es2020: true
+    es2020: true,
   },
   extends: [
     'eslint:recommended',
@@ -15,7 +15,7 @@ module.exports = {
     'plugin:prettier/recommended',
 
     // eslint-plugin-prettier
-    'prettier/vue'
+    'prettier/vue',
   ],
   parserOptions: {
     // Needs to be added here instead of adding it in parser.
@@ -24,12 +24,12 @@ module.exports = {
     sourceType: 'module',
     ecmaFeatures: {
       jsx: true,
-      legacyDecorators: true
-    }
+      legacyDecorators: true,
+    },
   },
   rules: {
     'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
-    'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off'
+    'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
   },
   overrides: [
     // This fixes the no-unused-vars error when using TS types inside Vue SFCs.
@@ -38,13 +38,13 @@ module.exports = {
       files: ['*.vue'],
       rules: require('@typescript-eslint/eslint-plugin').configs[
         'eslint-recommended'
-        ].overrides[0].rules
+      ].overrides[0].rules,
     },
     {
       files: ['**/tests/unit/**/*.spec.{j,t}s?(x)'],
       env: {
-        jest: true
-      }
-    }
-  ]
+        jest: true,
+      },
+    },
+  ],
 };

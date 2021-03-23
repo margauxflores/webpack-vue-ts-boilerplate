@@ -10,23 +10,23 @@ const prodConfig = {
         test: /\.scss$/,
         use: [
           {
-            loader: MiniCSSExtractPlugin.loader
+            loader: MiniCSSExtractPlugin.loader,
           },
           {
             loader: 'css-loader',
-            options: { modules: true }
+            options: { modules: true },
           },
           'postcss-loader',
-          'sass-loader'
+          'sass-loader',
         ],
       },
-    ]
+    ],
   },
   plugins: [
     new MiniCSSExtractPlugin({
-      filename: 'style.css'
-    })
-  ]
+      filename: 'style.css',
+    }),
+  ],
 };
 
 module.exports = merge(commonConfig, prodConfig);
